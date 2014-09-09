@@ -109,8 +109,10 @@ time = Time.now      # => 2014-09-08 22:57:34 -0400
 
 # to next 10 minutes...
 time.ceil_to(60*10)  # => 2014-09-08 23:00:00 -0400
+
 # to previous 15 minutes...
 time.floor_to(60*15) # => 2014-09-08 22:45:00 -0400
+
 # to nearest hour...
 time.round_to(60*60) # => 2014-09-08 23:00:00 -0400
 ```
@@ -118,10 +120,8 @@ time.round_to(60*60) # => 2014-09-08 23:00:00 -0400
 If you need to round to something smaller than one second, use rationals to avoid precision loss.
 
 ```ruby
-time.xmlschema(6)
-# => "2014-09-08T22:57:34.433197-04:00"
-time.round_to(1.to_r/1000).xmlschema(6)
-# => "2014-09-08T22:57:34.433000-04:00"
+time.xmlschema(6)                       # => "2014-09-08T22:57:34.433197-04:00"
+time.round_to(1.to_r/1000).xmlschema(6) # => "2014-09-08T22:57:34.433000-04:00"
 ```
 
 Times are rounded in their time zone.
@@ -213,12 +213,11 @@ fortnight = 2.weeks
 
 # UNIX epoch is a Thursday in UTC, Julian epoch is a Monday
 
-date_time.round_to(fortnight)        # => Mon, 15 Sep 2014 00:00:00 -0400
-date_time.round_in_utc_to(fortnight) # => Wed, 10 Sep 2014 20:00:00 -0400
+date_time.round_to(fortnight)                        # => Mon, 15 Sep 2014 00:00:00 -0400
+date_time.round_in_utc_to(fortnight)                 # => Wed, 10 Sep 2014 20:00:00 -0400
 
 unix_epoch_minus_four = DateTime.new(1970, 1, 1, 0, 0, 0, "-0400")
-date_time.round_to(fortnight, unix_epoch_minus_four)
-# => Thu, 11 Sep 2014 00:00:00 -0400
+date_time.round_to(fortnight, unix_epoch_minus_four) # => Thu, 11 Sep 2014 00:00:00 -0400
 ```
 
 Happy rounding!
