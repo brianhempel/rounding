@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+require "rounding"
+require "active_support/time"
+require "pry"
+
+TIME_ZONE = ActiveSupport::TimeZone["Bern"]
+AST       = ActiveSupport::TimeZone["Kuwait"] # something without DST
+
+binding.pry
