@@ -3,9 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/rounding.svg)](http://badge.fury.io/rb/rounding)
 [![Build Status](https://travis-ci.org/brianhempel/rounding.svg)](https://travis-ci.org/brianhempel/rounding)
 
-Rounding allows you to round any numeric value to anything you want. You can also round a Time (or any Time-like object) to, for example, the nearest 15 minutes.
-
-Rounding is compatible with ActiveSupport's Time extensions, but also works fine without ActiveSupport.
+Rounding allows you to round any numeric value to anything you want. You can also round a Time to, for example, the nearest 15 minutes.
 
 Some quick examples:
 
@@ -17,6 +15,8 @@ require 'rounding'
 101.ceil_to(25)               # => 125
 Time.now.round_to(15.minutes) # => 2014-09-08 22:30:00 -0400
 ```
+
+Rounding is compatible with ActiveSupport's Time extensions, but also works fine without ActiveSupport.
 
 ## Installation
 
