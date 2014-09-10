@@ -210,13 +210,12 @@ The `round_in_utc_to`, `floor_in_utc_to`, and `ceil_in_utc_to` are also availabl
 
 ```ruby
 fortnight = 2.weeks
+unix_epoch_minus_four = DateTime.new(1970, 1, 1, 0, 0, 0, "-0400")
 
 # UNIX epoch is a Thursday in UTC, Julian epoch is a Monday
 
 date_time.round_to(fortnight)                        # => Mon, 15 Sep 2014 00:00:00 -0400
 date_time.round_in_utc_to(fortnight)                 # => Wed, 10 Sep 2014 20:00:00 -0400
-
-unix_epoch_minus_four = DateTime.new(1970, 1, 1, 0, 0, 0, "-0400")
 date_time.round_to(fortnight, unix_epoch_minus_four) # => Thu, 11 Sep 2014 00:00:00 -0400
 ```
 
