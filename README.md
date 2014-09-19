@@ -84,9 +84,9 @@ For all methods, the class of the result depends on the input arguments.
 If you need super-precise rounding, use Rationals.
 
 ```ruby
-time = Time.now.to_f         # => 1410230400.4758651
-time.round_to(0.0001)        # => 1410230400.4759002 # Float is not exact
-time.round_to(1.to_r/10_000) # => (14102304004759/10000)
+seconds = Time.now.to_f         # => 1410230400.4758651
+seconds.round_to(0.0001)        # => 1410230400.4759002 # Float is not exact
+seconds.round_to(1.to_r/10_000) # => (14102304004759/10000)
 ```
 
 You can provide an offset if you want the multiples to start counting from something other than zero.
