@@ -1,5 +1,6 @@
 module Rounding::TimeExtensions
   def floor_to(step, around=-utc_offset)
+    step = step.to_r
     around = around.to_r
     rational_self = self.to_r
     difference = rational_self - rational_self.floor_to(step, around)
@@ -7,6 +8,7 @@ module Rounding::TimeExtensions
   end
 
   def ceil_to(step, around=-utc_offset)
+    step = step.to_r
     around = around.to_r
     rational_self = self.to_r
     difference = rational_self - rational_self.ceil_to(step, around)
@@ -14,6 +16,7 @@ module Rounding::TimeExtensions
   end
 
   def round_to(step, around=-utc_offset)
+    step = step.to_r
     around = around.to_r
     rational_self = self.to_r
     difference = rational_self - rational_self.round_to(step, around)
