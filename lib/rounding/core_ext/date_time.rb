@@ -1,5 +1,9 @@
 require 'rounding/time_extensions'
 
+# Don't explode if you are not using Dates.
+class Date
+end
+
 class DateTime < Date
   include Rounding::TimeExtensions
 
@@ -47,7 +51,7 @@ class DateTime < Date
     if defined?(ActiveSupport::Duration) && ActiveSupport::Duration === value
       value.to_r / 1.day.to_r
     else
-      value  
+      value
     end
   end
 end
